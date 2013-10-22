@@ -1,0 +1,1 @@
+[2013-10-11 16:06:48]	[select distinct(dts.id) id , dts.*  from   story dts   where  dts.story_id in (:story_id_0) and  dts.is_v in (:is_v ) and dts.status = :status and dts.create_time > :begin  and dts.create_time < :end  order by  find_in_set(id , 1636530)  limit 0,10]	[{"story_id_0":"1636530","is_v":1,"status":1,"begin":0,"end":1381478808}]

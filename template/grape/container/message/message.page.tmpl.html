@@ -1,0 +1,48 @@
+<div class="container well-bg">
+  <div class="wrapper-header">
+    <h1>与{ $talk_to_username }的邮件</h1>
+    <small class="fs14">
+      为保护用户隐私，36氪+不会透露邮箱地址，邮件往来会由36氪+为您中转，36氪+不会记录您的邮件内容
+    </small>
+  </div>
+
+  <ul class="list-wrapper un-slide list-block blank-bg">
+    <li class="item-inverse">
+    	<form class="form-horizontal" rel="user-message">
+      <textarea rows="4" class="caption placeholder" name="content" toid="{$to_user_id}" placeholder="输入邮件内容"></textarea>
+      <span class="help-block"></span>
+      <div>
+		<button type="submit" class="btn btn-primary pull-right" rel="user-message">发送</button>
+      </div>
+      </form>
+    </li>
+    {foreach from=$messages item=v key=k}
+	    {if $v.pmsg_type == 1 }
+		    <li class="thumb normal-bg{if $k==0} first{/if}">
+		      <img  class="avatar" src="{ $v.sender_info.avatar}" alt="{ $v.sender_info.username}">
+		      <div class="item">
+				<label class="pull-right">{ $v.pmsg_time}</label>
+				<h4>{ $v.sender_info.username}<small>说：</small></h4>
+				<p class="message-content">
+					<i>“</i>{ $v.pmsg_info.content }<i>”</i>
+				</p>
+		      </div>
+		    </li>
+	    {else}
+		    <li class="item-inverse thumb normal-bg{if $k==0} first{/if}">
+		      <div class="item">
+				<label class="pull-right">{ $v.pmsg_time}</label>
+				<h4>我<small>说：</small></h4>
+				<p class="message-content">
+				<i>“</i>{ $v.pmsg_info.content }<i>”</i>
+				</p>
+		      </div>
+		      <img class="avatar" src="{ $v.sender_info.avatar }" alt="{ $v.sender_info.username}">
+		    </li>
+	    {/if}
+    {/foreach}
+  </ul>
+  <div class="pagination-centered">
+    {$page_fliper}
+  </div>
+</div>

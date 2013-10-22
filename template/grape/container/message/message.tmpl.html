@@ -1,0 +1,28 @@
+<div class="container well-bg">
+  <div class="wrapper-header">
+    <h1>邮件</h1>
+    <small class="fs14">
+      您向用户发送的邮件会同时发送到对方的邮箱中
+    </small>
+  </div>
+
+  <ul class="list-wrapper un-slide list-block blank-bg">
+  {/if !empty($messages)/}
+  	{/foreach from=$messages item=m key=k/}
+    <li class="thumb normal-bg{/if $k==0/} first{//if/}{/if $m.pmsg_info.status == 1 && $m.pmsg_type == 1/} message-unit-noread{/else/} message-unit-read{//if/}" rel="message-unit" data-value="{/$m.pmsg_replyid/}" >
+	  <img class="avatar" src="{/ $m.sender_info.avatar/}">
+	  <div class="item">
+		  <label class="pull-right">{/ $m.pmsg_time/}</label>
+		  <h4 class="muted">{/if $m.pmsg_type == 1/}{/ $m.sender_info.username/}对我说{/else/}我对{/ $m.receiver_info.username/}说{//if/}</h4>
+		  <p class="muted">{/ $m.pmsg_info.content/}</p>
+	   </div>
+    </li>
+    {//foreach /}
+   {/else/}
+   <p>暂无邮件</p>
+   {//if/}
+  </ul>
+  <div class="pagination-centered">
+    {/$page_fliper/}
+  </div>
+</div>

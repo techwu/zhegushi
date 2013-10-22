@@ -1,0 +1,109 @@
+.form-signin {
+  max-width: 360px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.tags{
+	ul.tags-area {
+		list-style: none;
+		display:none;
+		padding:0;
+		width:100%;
+		float:left;
+		padding-top:10px;
+		& > li{
+			display: inline-block;
+			padding: 0 0 0 10px;
+			line-height: 24px;
+			height: 24px;
+			margin: 0px 2px 2px 0;
+			background-color: #daf5fa;
+			color: #4184bb;
+			font-size: 14px;
+			text-decoration: none;
+			a{
+				font-size:14px;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+			.close-tag{
+				padding:5px 2px 0 6px;
+				float:right;
+				cursor:pointer;
+			}
+		}
+	}
+	.tagsbox{
+		background: none repeat scroll 0 0 #fff;
+		display: inline;
+		height: 110px;
+		.supertags{
+			clear: both;
+			margin-top: 15px;
+			overflow: hidden;
+			width: auto;
+			height: auto;
+			& > a{
+				display: inline-block;
+				padding: 0 10px;
+				line-height: 24px;
+				height: 24px;
+				margin: 0 2px 2px 0;
+				background-color: #daf5fa;
+				color: #4184bb;
+				font-size: 14px;
+				text-decoration: none;
+				cursor: pointer;
+				& > em{
+					color: #4184bb;
+					margin-right: 2px;
+					font-family: Arial;
+					font-size: 17px;
+					font-weight: bold;
+					vertical-align: -2px;
+				}
+				&:hover{
+					background-color: #eee;
+					color: #9a9a9a;
+					& >  em{
+						cursor: pointer;
+						font-size: 17px;
+						color: #9a9a9a;
+					}
+				}
+			}
+			
+		}
+	}
+}

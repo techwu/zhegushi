@@ -1,0 +1,453 @@
+ul{
+	&.row{
+		margin:0;
+		padding:0;
+	}
+	&.items{
+		& > li.item{
+			cursor:pointer;
+			/*padding: 8px 0;*/
+			& > ul {
+				.item-details{
+					margin-top: 3px;
+					display: inline-block;
+					cursor: pointer;
+					width: 14px;
+					height: 14px;
+					&.item-details-open {
+						background: url("../image/datatable-row-openclose.png") no-repeat 0 -23px !important;
+					}
+					&.item-details-close {
+						background: url("../image/datatable-row-openclose.png") no-repeat 0 0;
+					}
+				}
+				& > li{
+					margin:0;
+					padding:8px 0;
+					overflow:hidden;
+					height: 31px;
+					&.sorting_asc{
+						background: url('../image/sort_asc.png') no-repeat center right;
+					}
+					&.sorting {
+						background: url('../image/sort_both.png') no-repeat center right;
+					}
+					&.sorting_desc {
+						background: url('../image/sort_desc.png') no-repeat center right;
+					}
+				}
+			}
+		}
+	}
+}
+
+.items{
+	overflow: hidden;
+	border:2px solid #eee;
+	.item{
+		&:first-child{
+			color:#fff;
+		}
+		&.yellow{
+			background:@yellow !important;
+		}
+		&:nth-child(odd){
+			background: #eee;
+		}
+		&:hover{
+			background:#ddd;
+		}
+		.item-boxes{
+			width:100%;
+			padding:10px 5%;
+			margin-bottom:10px;
+			border-top:1px solid #eee;
+			display:none;
+			cursor:default;
+			background:#f6f6f6;
+			&:hover{
+				background:#fff;
+			}
+			h4{
+				border-bottom: 1px solid #ddd;
+				color: #666;
+				line-height:24px;
+				font-size:16px;
+			}
+			.row{
+				padding:8px 0;
+				margin:0;
+				overflow: hidden;
+				border-bottom: 1px solid #ddd;
+				&:nth-child(even) {
+					background: #f1f1f1;
+				}
+			}
+			.item-show{
+				float:left;
+				width:70%;
+				border-right:1px solid #eee;
+				img{
+					max-width:100%;
+				}
+			}
+			.item-operate{
+				float:left;
+				width:30%;
+			}
+		}
+	}
+}
+.help-alert{
+	font-size: 12px;
+	color:#ffb848;
+	margin-left: 20px;
+}
+div , 
+span {
+	&.checker{
+		width: 19px;
+		height: 19px;
+		margin-right: 5px;
+		position: relative;
+		input {
+			opacity: 0;
+			border: none;
+			width: 19px;
+			height: 19px;
+		}
+		span {
+			display: inline-block;
+			zoom: 1;
+			text-align: center;
+			background-position: 0 -260px;
+			width: 19px;
+			height: 19px;
+			background-image: url(../image/sprite.png);
+			&.checked{
+				background-position: -76px -260px;
+			}
+		}
+	}
+}
+@media (min-width: 980px){
+	.li-checkbox{
+		width:4%;
+		padding-left:1%!important;
+	}
+	.li-identify{
+		width:8%;
+		text-align:center;
+	}
+	.li-uname{
+		width:8%;
+		text-align:center;
+	}
+	
+	.li-uemail{
+		width:17%;
+		text-align:center;
+	}
+	.li-phone{
+		width:12%;
+		text-align:center;
+	}
+	
+	.li-org{
+		width:17%;
+		text-align:center;
+	}
+	
+	.li-role{
+		width:16%;
+		text-align:center;
+	}
+	
+	.li-ustatus{
+		width:14%;
+		text-align:center;
+	}
+	
+	.li-name{
+		width:22%;
+	}
+	
+	.li-time{
+		width:12%;
+		text-align:center;
+	}
+	.li-phase{
+		width:17%;
+		text-align:center;
+	}
+	.li-location{
+		width:17%;
+		text-align:center;
+	}
+	.li-status{
+		width:14%;
+		text-align:center;
+	}
+	
+	.li-event{
+		width:20%;
+	}
+	.li-event-identify{
+		width:20%;
+		text-align:center;
+	}
+	.li-time{
+		width:10%;
+		text-align:center;
+	}
+	.li-opearte{
+		width:12%;
+		text-align:center;
+	}
+	.li-coordinate{
+		width:30%;
+		text-align:center;
+	}
+	.li-title{
+		width:40%;
+		text-align:center;
+	}
+	.li-crole{
+		width:20%;
+		text-align:center;
+	}
+	
+	.li-sname{
+		width:20%;
+		text-align:center;
+	}
+	
+	.li-scategory {
+		width:30%;
+		text-align:center;
+	}
+	
+	.li-timeline{
+		width:35%;
+		text-align:center;
+	}
+	
+	.li-timeline-status{
+		width:12%;
+		text-align:center;
+	}
+	.li-timeline-productname{
+		width:20%;
+		text-align:center;
+	}
+	
+	.li-timeline-created{
+		width:12%;
+		text-align:center;
+	}
+}
+@media (min-width: 768px) and (max-width: 979px){
+	.li-checkbox{
+		display:none!important;
+	}
+	.li-identify{
+		display:none!important;
+	}
+	.li-name{
+		width:30%;
+	}
+	.li-time{
+		display:none!important;
+	}
+	.li-phase{
+		width:20%;
+		text-align:center;
+	}
+	.li-location{
+		width:23%;
+		text-align:center;
+	}
+	.li-status{
+		width:23%;
+		text-align:center;
+	}
+	
+	.li-uname{
+		width:25%;
+		text-align:center;
+	}
+	
+	.li-uemail{
+		display:none!important;
+	}
+	.li-phone{
+		width:32%;
+		text-align:center;
+	}
+	
+	.li-org{
+		width:40%;
+		text-align:center;
+	}
+	
+	.li-role{
+		display:none!important;
+	}
+	
+	.li-ustatus{
+		display:none!important;
+	}
+	
+	.li-event{
+		width:40%;
+	}
+	.li-event-identify{
+		width:30%;
+		text-align:center;
+	}
+	.li-time{
+		display:none!important;
+	}
+	.li-opearte{
+		width:25%;
+		text-align:center;
+	}
+	
+	.li-coordinate{
+		width:30%;
+		text-align:center;
+	}
+	.li-title{
+		width:40%;
+		text-align:center;
+	}
+	.li-crole{
+		width:30%;
+		text-align:center;
+	}
+	.li-sname{
+		width:90%;
+		text-align:center;
+	}
+	
+	.li-scategory {
+		display:none!important
+	}
+	
+	.li-timeline{
+		width:70%;
+		text-align:center;
+	}
+	
+	.li-timeline-status{
+		width:26%;
+		text-align:center;
+	}
+	.li-timeline-productname{
+		display:none!important
+	}
+	
+	.li-timeline-created{
+		display:none!important
+	}
+}
+
+@media (max-width: 768px){
+	.li-checkbox{
+		display:none!important;
+	}
+	.li-identify{
+		display:none!important;
+	}
+	.li-name{
+		width:57%;
+	}
+	.li-time{
+		display:none!important;
+	}
+	.li-phase{
+		display:none!important;
+	}
+	.li-location{
+		display:none!important;
+	}
+	.li-status{
+		width:40%;
+		text-align:center;
+	}
+	
+	.li-uname{
+		width:25%;
+		text-align:center;
+	}
+	
+	.li-uemail{
+		display:none!important;
+	}
+	.li-phone{
+		width:32%;
+		text-align:center;
+	}
+	
+	.li-org{
+		width:40%;
+		text-align:center;
+	}
+	
+	.li-role{
+		display:none!important;
+	}
+	
+	.li-ustatus{
+		display:none!important;
+	}
+	.li-event{
+		width:49%;
+	}
+	.li-event-identify{
+		display:none!important;
+	}
+	.li-time{
+		display:none!important;
+	}
+	.li-opearte{
+		width:48%;
+		text-align:center;
+	}
+	.li-coordinate{
+		display:none!important;
+	}
+	.li-title{
+		width:49%;
+		text-align:center;
+	}
+	.li-crole{
+		width:15%;
+		text-align:center;
+	}
+	.li-sname{
+		width:90%;
+		text-align:center;
+	}
+	
+	.li-scategory {
+		display:none!important
+	}
+	
+	.li-timeline{
+		width:70%;
+		text-align:center;
+	}
+	
+	.li-timeline-status{
+		width:26%;
+		text-align:center;
+	}
+	.li-timeline-productname{
+		display:none!important
+	}
+	
+	.li-timeline-created{
+		display:none!important
+	}
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<base href="{/$STATIC_PATH/}" />
+  	<title>{/$frame_pagetitle/}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="{/$frame_keywords/}" />
+    <meta name="description" content="{/$frame_description/}"/>
+    <link rel="icon" href="{/$IMAGE_PATH/}img/logo/icon.jpg_avatar4040.jpg" type="image/x-icon">
+    {/*响应式布局*/}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{/$STATIC_PATH/}{/$CSSPATH/}/style.css?{/$version/}">
+     <!-- <!--[if lte IE 6]> -->
+	  <!-- bsie css 补丁文件 -->
+	  <!-- <link rel="stylesheet" type="text/css" href="{/$STATIC_PATH/}{/$CSSPATH/}/bootstrap-ie6.css"> -->
+	
+	  <!-- bsie 额外的 css 补丁文件 -->
+	  <!-- <link rel="stylesheet" type="text/css" href="{/$STATIC_PATH/}{/$CSSPATH/}/ie.css"> -->
+	  <!-- <![endif]--> 
+  </head>
+  <body id="{/$session_user_id/}">
+    <div id="container">
+      {/$frame_header/}
+      {/$frame_content/}
+      {/$frame_footer/}
+    </div>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/jquery.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/jquery/jquery.artzoom.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/jquery/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/datepicker.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/bootstrap/typeahead.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/bootstrap/tooltip.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/bootstrap/popover.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/bootstrap/carousel.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/bootstrap/dropdown.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/bootstrap/respond.min.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/bootstrap/collapse.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/ajaxupload.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/grape.root.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/grape.ui.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/self/validate.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/self/position.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/self/modal.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/self/toggle.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/self/fileUpload.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/self/handler.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/self/trigger.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/self/bubble.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/self/placeholder.js"></script>
+    <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/grape.js?{/$version/}"></script>
+    {/if isset($footjs)/}
+    	{/foreach from=$footjs item=js/}
+    	<script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/{/$js/}.js?{/$version/}"></script>
+    	{//foreach/}
+    {//if/}
+     <!--[if lt IE 9]>
+     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+    
+    <!--[if lte IE 6]>
+	  <script type="text/javascript" src="{/$STATIC_PATH/}{/$JSPATH/}/bootstrap-ie.js"></script>
+	<![endif]-->
+  </body>
+  
+</html>

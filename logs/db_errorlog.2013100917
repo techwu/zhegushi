@@ -1,0 +1,2 @@
+[2013-10-09 17:26:58]	[select count(user_id) num from T_ITEA_USER where status > 0 and created > :begin and created < :end]	[{"begin":-28800,"end":1381334399}]
+[2013-10-09 17:26:58]	[select count(user_id) num from T_ITEA_USER where status > 0 and created > :begin and created < :end]	[{"begin":-28800,"end":1381334399}]

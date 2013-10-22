@@ -1,0 +1,22 @@
+<div class="col-md-12">
+	<div class="portlet box green">
+		<div class="portlet-title">
+			<div class="caption"><i class="icon-group"></i>&nbsp;人物数据</div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse"></a>
+				<a href="javascript:;" class="reload"></a>
+				<a href="javascript:;" class="remove"></a>
+			</div>
+		</div>
+		<div class="portlet-body">
+			<table class="table table-hover">
+				<thead>
+					<tr><th>事件</th><th>用户数</th><th>新增情况</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>总注册用户数</td><td>{/$user_count/}</td><td><span class="label {/if $user_count_add > 0/}label-success{/elseif $user_count_add ==0/}label-warning{/else/}label-danger{//if/}">{/$user_count_add/}</span></td></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

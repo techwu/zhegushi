@@ -1,0 +1,34 @@
+<div class="col-md-4 sidebars">
+{/if $tmpl == 'main-sidebar'/}
+	<div class="white-bg bs2 bar">
+		<h4 class="title">收听</h4>
+		<div class="content rss">
+			<div class="qrcode">
+				<img src="{/$IMAGE_PATH/}weixin/weixin.jpg_avatar8686.jpg" alt="这故事"/>
+				<p>用微信看故事</p>
+			</div>
+			<div class="snslink">
+				<a href="http://user.qzone.qq.com/947252246" target="_blank">QQ空间</a>
+				<a href="http://t.qq.com/zhegushier" target="_blank">腾讯微博</a>
+				<a href="http://weibo.com/zhegushi" target="_blank">新浪微博</a>
+			</div>
+		</div>
+	</div>
+	<div class="white-bg bs2 bar">
+		<h4 class="title">推荐标签</h4>
+		<div class="content tag">
+			{/foreach from=$validate_tags item=t/}
+				<a class="tag"href="tag/index/{/$t.id/}">{/$t.tag/}</a>
+			{//foreach/}
+		</div>
+	</div>
+	<div class="white-bg bs2 bar">
+		<h4 class="title">热门标签</h4>
+		<div class="content tag">
+			{/foreach from=$hot_tags item=t/}
+				<a class="tag"href="tag/index/{/$t.id/}">{/$t.tag/}</a>
+			{//foreach/}
+		</div>
+	</div>
+{//if/}
+</div>

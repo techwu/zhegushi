@@ -1,0 +1,34 @@
+<div class="container well-bg">
+  <div class="wrapper-header">
+    <h1>系统消息</h1>
+    <small>
+      36氪+为您发送的系统消息会同时发送到您的邮箱
+    </small>
+  </div>
+
+  <ul class="">
+  	{/if !empty($messages)/}
+    {/foreach from=$messages item=v key=k/}
+    <li class="">
+	  <img class="avatar" src="{/$avatar/}" alt="36氪+为您消息提醒">
+      <div class="item">
+		<label class="pull-right">{/ $v.created/}</label>
+		<h4>36氪+&nbsp;<small>{/ $v.subject /}</small></h4>
+		<p>
+			<i class="icon-quote-left"></i>
+		{/ $v.content /}
+			<i class="icon-quote-right"></i>
+		</p>
+      </div>
+    </li>
+    {//foreach/}
+    {/else/}
+    <p>
+    暂无消息
+    </p>
+    {//if/}
+  </ul>
+  <div class="pagination-centered">
+    {/$page_fliper/}
+  </div>
+</div>

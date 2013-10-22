@@ -1,0 +1,59 @@
+<form class="form-horizontal" rel="form-story-edit" method="post" action="story/ajax_editStory" data-value="{/$story.id/}">
+	<fieldset>
+		<div class="portlet box green"> 
+			<div class="portlet-title event-i-a">
+				<a href="story/page/{/$story.id/}">查看</a>
+			</div>
+			<div class="portlet-body">
+				<div class="form-group">
+					<label class="control-label col-lg-2" for="inputTitle">标题<span class="control-label-r">&nbsp;*</span></label>
+					<div class="col-lg-10">
+				    	<input type="text" class="form-control placeholder" placeholder="故事标题，可为空" name="title" id="inputTitle" rel="input-text" value="{/if isset($story.title)/}{/$story.title/}{//if/}" ><span class="help-inline"></span>
+				    </div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-lg-2" for="textStoryContent">内容<span class="control-label-r">&nbsp;*</span></label>
+					<div class="col-lg-10">
+						<textarea id="textStoryContent" name="content" rows="4" rel="text-area" maxlength="1000" class="form-control on placeholder" placeholder="分享我的故事，分享我的喜怒哀乐" popover="tooltip" data-trigger="focus" data-html="true" data-placement="right" data-title="分享我的故事，分享我的喜怒哀乐" data-original-title="">{/if isset($story.story)/}{/$story.story/}{//if/}</textarea>
+						<span class="help-inline"></span>
+						<p><span rel="textStoryContent" class="words-limits">0/1000</span></p>
+					</div>
+				</div>
+				<div class="form-group tags" >
+					<label class="control-label col-lg-2" for="inputSettingName">关键词<span class="control-label-r">&nbsp;*</span></label>
+					<div class="col-lg-10">
+						<div class="col-md-5">
+							<input id="inputTags" type="text" value="" class="form-control tags-autocomplete" placeholder="标签之间用空格分隔" popover="tooltip" data-trigger="focus" data-html=true data-placement="right" data-html=true data-title="打上故事标签"  placeNotice="">
+							<ul class="tags-area" {/if $story.tags_info/}style="display:block;"{//if/}>
+								{/if $story.tags_info/}
+			                	{/foreach from=$story.tags_info item=a key=k/}
+			                		<li class="story-tag"><a>{/$a.tag/}</a><img src="http://img.36tr.com/img/tags/close-tag.png" class="close-tag"></li>
+			                	{//foreach/}
+			                	{//if/}
+			                    </ul>
+							</ul>
+						</div>
+						<div class="col-md-7">
+							<div class="tagsbox">
+    							<p>推荐标签：</p>
+  								<div class="supertags">
+  									{/foreach from=$nav_validate_tags item=t/}
+									<a title="添加标签" data-tag="{/$t.tag/}"><em>+</em>{/$t.tag/}</a>
+									{//foreach/}
+  								</div>
+  							</div>
+						</div>
+					</div>
+				</div>
+							
+				<div class="action-group">
+					<p><span class="help-block"></span></p>
+					<label class="control-label col-lg-2" for="inputSettingName"></label>
+					<div class="col-lg-10">
+						<button type="submit" class="btn btn-lg btn-primary" rel="login">确定</button>
+					</div>
+				</div><br/><br/>
+			</div>
+		</div>
+    </fieldset>
+</form>

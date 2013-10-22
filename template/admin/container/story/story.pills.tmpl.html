@@ -1,0 +1,119 @@
+		<ul class="list-unstyled items">
+				<li class="item yellow">
+						<ul class="list-inline row list-title">
+							<li class="li-checkbox">
+								<div class="checker">
+									<span>
+										<input type="checkbox" class="group-checkable" data-set="ul.items > li.item .checkboxes" >
+									</span>
+								</div>
+							</li>
+							<li class="li-identify sorting">ID</li>
+							<li class="li-name">发表人</li>
+							<li class="li-time">发表时间</li>
+							<li class="li-phase">内容</li>
+							<li class="li-location">tags</li>
+							<li class="li-status">内容状态</li>
+						</ul>
+					</li>
+				{/if !empty($story_list)/}
+					{/foreach from=$story_list item=s/}
+					<li class="item">
+						<ul class="list-inline row">
+							<li class="li-checkbox">
+								<div class="checker">
+								<span>
+									<input type="checkbox" class="checkboxes" name="storyids[]" value="{/$s.id/}">
+								</span>
+								</div>
+							</li>
+							<li class="li-identify toggle">{/$s.id/}</li>
+							<li class="li-name toggle">{/$s.user_info.username/}</li>
+							<li class="li-time toggle">{/$s.create_time|date_format:'%Y-%m-%d %h'/}</li>
+							<li class="li-phase toggle">{/$s.story/}</li>
+							<li class="li-location toggle">
+							{/ if !empty( $s.tags_info )/}
+								{/foreach from=$s.tags_info item=t/}
+									<a href="{/$WWW_PATH/}tag/index/{/$t.id/}" target="_blank">{/$t.tag/}</a>
+								{//foreach/}
+							{//if/}
+							</li>
+							<li class="li-status toggle">
+								{/if $s.is_v == 1/}
+									<span class="label label-success">已审核</span>
+								{/elseif $s.is_v == 0/}
+									<span class="label label-info">待审核</span>
+								{//if/}
+							</li>
+						</ul>
+						
+						<div class="item-boxes">
+							<div class="item-show">
+								<h4>详细信息</h4>
+								<ul class="item-box list-unstyled">
+									<li class="row">
+										<div class="col-md-3">
+											故事标题：
+										</div>
+										<div  class="col-md-9">
+											{/if empty($s.title)/}
+											空
+											{/else/}
+											{/$s.title/}
+											{//if/}
+											{/if $s.is_v == 1/}
+												<span class="label label-success">已审核</span>
+											{/elseif $s.is_v == 0/}
+												<span class="label label-info">待审核</span>
+											{//if/}
+										</div>
+									</li>
+									<li class="row">
+										<div class="col-md-3">详细内容：</div><div  class="col-md-9">{/$s.story|nl2br/}</div>
+									</li>
+									<li class="row">
+										<div class="col-md-3">故事关键词：</div><div  class="col-md-9">
+										{/ if !empty( $s.tags_info )/}
+											{/foreach from=$s.tags_info item=t/}
+												<a href="{/$WWW_PATH/}tag/index/{/$t.id/}" target="_blank">{/$t.tag/}</a>
+											{//foreach/}
+										{//if/}
+										</div>
+									</li>
+								</ul>
+								<h4>发表用户信息</h4>
+								<ul class="item-box list-unstyled">
+									<li class="row">
+										<div class="col-md-3">
+											<img src="{/$s.user_info.avatar/}_avatar8686.jpg" />
+										</div>
+										<div class="col-md-9">
+											<p>{/$s.user_info.username/}({/$s.user_info.email/})</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="item-operate">
+								<div class="row">
+									<div class="col-md-11">
+										<p><a class="btn btn-success" href="{/$BASE_URL/}story/page/{/$s.id/}?edit=true"  target="_blank">编辑</a></p>
+										{/if $s.is_v == 0/}
+											<p><a class="btn btn-success" rel="operateStory" data-operate="release" data-value="{/$s.id/}">通过审核</a></p>
+											<p><a class="btn btn-danger" rel="operateStory" data-operate="delete" data-value="{/$s.id/}">删除</a></p>
+										{/else/}
+											{/if $s.is_recommended/}
+											<p><a class="btn btn-info" rel="operateStory" data-operate="unrecommend" data-value="{/$s.id/}">取消推荐</a></p>
+											{/else/}
+											<p><a class="btn btn-info" rel="operateStory" data-operate="recommend" data-value="{/$s.id/}">首页推荐</a></p>
+											{//if/}
+											<p><a class="btn btn-danger" rel="operateStory" data-operate="delete" data-value="{/$s.id/}">删除</a></p>
+											<p><a class="btn btn-warning" rel="operateStory" data-operate="reset" data-value="{/$s.id/}">重置</a></p>
+										{//if/}
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					{//foreach/}
+					{//if/}
+		</ul>

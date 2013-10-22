@@ -1,0 +1,67 @@
+.nav > li.dropdown .dropdown-toggle .badge{
+	position: absolute;
+	font-weight: 300;
+	top: 8px;
+	right: 24px;
+	text-align: center;
+}
+.dropdown-menu{
+	&.extended{
+		min-width: 160px !important;
+		max-width: 300px !important;
+		width: 233px !important;
+		background-color: #ffffff !important;
+		li{
+			p {
+				padding: 10px;
+				background-color: #eee;
+				margin: 0px;
+				font-size: 14px;
+				font-weight: 300;
+				color: #000;
+			}
+			i{
+				margin: 3px 3px 0 0;
+				float: right;
+			}
+			a{
+				padding: 10px !important;
+				list-style: none;
+				border-bottom: 1px solid #f4f4f4 !important;
+				font-size: 12px;
+				text-shadow: none;
+				clear: both;
+				font-weight: normal;
+				line-height: 20px;
+				white-space: normal !important;
+				.photo{
+					img{
+						float: left;
+						height: 40px;
+						width: 40px;
+						margin-right: 6px;
+					}
+				}
+				.subject {
+					display: block;
+					.from{
+						font-size: 14px;
+						font-weight: 400;
+						color: #02689b;
+					}
+					.time{
+						font-size: 12px;
+						font-weight: 600;
+						font-style: italic;
+						position: absolute;
+						right: 10px;
+					}
+				}
+				.message{
+					display: block !important;
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}

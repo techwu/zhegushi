@@ -1,0 +1,23 @@
+<h3 class="page-title">{/$title/}<small>----{/$coordinate/}from：{/$begin/} To：{/$end/}</small></h3>
+					<ul class="breadcrumb">
+						{/$breadcrumb/}
+						<li class="pull-right no-text-shadow dropdown">
+							<i class="icon-calendar"></i>
+							<span class="dropdown-toggle" data-toggle="dropdown">{/$begin/}~{/$end/}</span>
+							<ul class="dropdown-menu datapicker-form">
+								<li>
+									<form method="get">
+										<div class="col-md-5">
+											from:<input type="text" class="datepicker" name="begin">
+										</div>
+										<div class="col-md-5">
+											To:<input type="text" class="datepicker" name="end">
+										</div>
+										<div class="col-md-2">
+											<input type="submit" class="submit" value="确定"/>
+										</div>
+									</form>
+								</li>
+							</ul>
+						</li>
+					</ul>

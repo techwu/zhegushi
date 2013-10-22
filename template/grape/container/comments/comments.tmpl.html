@@ -1,0 +1,17 @@
+
+		{/if !empty($comments) /}
+		{/foreach from=$comments item=c/}
+		<li class="comment-item">
+			<div class="avatar">
+				<img src="{/$c.avatar/}_2020.jpg" alt="{/$c.username/}">
+			</div>
+			<div class="comment-content">
+				<a href="profile/u/{/$c.user_id/}" class="userlogin">{/$c.username/}</a>:
+				<span class="body">{/$c.comment/}</span>
+			</div>
+			<div class="reply">
+				<a href="javascript:;;" class="link" rel="common-reply" data-value="{/$c.username/}"><i class="glyphicon glyphicon-share-alt inline"></i></a>
+			</div>
+		</li>
+		{//foreach/}
+		{//if/}

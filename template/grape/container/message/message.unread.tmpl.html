@@ -1,0 +1,22 @@
+<li>
+	<p>您有{/$session_user_info.message_num/}新消息提醒</p>
+</li>
+{/if !empty($message)/}
+{/foreach from=$message item=m/}
+<li>
+	<a {/if !empty($m.url)/}href="{/$m.url/}"{//if/}>
+		<span class="photo"><img src="{/$m.avatar/}" alt="{/$m.username/}"></span>
+		<span class="subject">
+			<span class="from">{/$m.username/}</span>
+			<span class="time">{/$m.created/}</span>
+		</span>
+		<span class="message">
+			{/$m.content/}
+		</span>  
+	</a>
+</li>
+{//foreach/}
+{//if/}
+<li class="external">
+	<a href="message">查看所有消息<i class="glyphicon glyphicon-circle-arrow-right"></i></a>
+</li>

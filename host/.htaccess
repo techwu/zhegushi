@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^zhegushi\.com
+RewriteRule ^(.*)$ http://www.zhegushi.com/$1 [R=permanent,L]
+RewriteRule ^$ index.php [L]
+RewriteCond $1 !^(index\.php|robots\.txt|img\/|favicon\.ico|css\/|js\/|static\/|fonts\/)
+RewriteRule ^(.*)$ index.php [L]

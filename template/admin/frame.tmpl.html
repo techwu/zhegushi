@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<base href="{/$STATIC_PATH/}" />
+  	<title>{/$frame_pagetitle/}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="{/$frame_keywords/}" />
+    <meta name="description" content="{/$frame_description/}"/>
+    <link rel="icon" href="{/$IMAGE_PATH/}img/logo/icons.jpg_avatar4040.jpg" type="image/x-icon">
+    {/*响应式布局*/}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{/$STATIC_PATH/}{/$CSSPATH/}/style.css?1">
+     <!-- <!--[if lte IE 6]> -->
+	  <!-- bsie css 补丁文件 -->
+	  <!-- <link rel="stylesheet" type="text/css" href="{/$STATIC_PATH/}{/$CSSPATH/}/bootstrap-ie6.css"> -->
+	
+	  <!-- bsie 额外的 css 补丁文件 -->
+	  <!-- <link rel="stylesheet" type="text/css" href="{/$STATIC_PATH/}{/$CSSPATH/}/ie.css"> -->
+	  <!-- <![endif]--> 
+  </head>
+  <body id="{/$session_user_id/}">
+    <div id="container">
+      {/$frame_header/}
+      {/$frame_content/}
+      {/$frame_footer/}
+    </div>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/jquery.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/jquery.blockui.min.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/datepicker.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/bootstrap/typeahead.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/bootstrap/tooltip.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/bootstrap/popover.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/bootstrap/carousel.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/bootstrap/dropdown.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/bootstrap/respond.min.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/bootstrap/collapse.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/app.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/ajaxupload.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/grape.root.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/grape.ui.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/self/validate.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/self/modal.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/self/toggle.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/self/fileUpload.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/self/handler.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/self/trigger.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/self/bubble.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/self/placeholder.js"></script>
+    <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/grape.js?{/$version/}"></script>
+    {/if isset($footjs)/}
+    	{/foreach from=$footjs item=js/}
+    	<script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/{/$js/}.js?{/$version/}"></script>
+    	{//foreach/}
+    {//if/}
+     <!--[if lt IE 9]>
+     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+    
+    <!--[if lte IE 6]>
+	  <!-- bsie js 补丁只在IE6中才执行 -->
+	  <script type="text/javascript" src="{/$BASE_URL/}{/$JSPATH/}/bootstrap-ie.js"></script>
+	<![endif]-->
+  </body>
+  
+</html>

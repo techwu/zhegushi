@@ -1,0 +1,58 @@
+.white-bg{
+	background:#fff!important;
+}
+.bs2{
+	.box-shadow(0 1px 1px rgba(0,0,0,0.2))!important;
+}
+i.inline{
+	display:inline!important;
+	margin-right:10px;
+}
+.mt18{
+	margin-top:18px;
+}
+.verticaltop{
+	vertical-align: top!important;
+}
+.verticalbtm{
+	vertical-align: bottom!important;
+}
+.banner{
+	height:200px;
+	width:100%;
+	&.love{
+		background:@banner-bg-love;
+	}
+	&.autumn{
+		background:@banner-bg-autumn;
+	}
+	.container{
+		position:relative;
+		img.logo{
+			width:148px;
+			position:absolute;
+			left:0px;
+			top:80px;
+			z-index:900;
+		}
+		img.picture{
+			width:100%;
+			position:absolute;
+			left:0px;
+			top:0px;
+			z-index:100;
+		}
+		img.title{
+			width:148px;
+			position:absolute;
+			right:30%;
+			top:80px;
+			z-index:900;
+		}
+		@media (max-width: @screen-desktop){
+			img.title{
+				right:5%;
+			}
+		}
+	}
+}

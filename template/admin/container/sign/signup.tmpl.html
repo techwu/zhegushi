@@ -1,0 +1,25 @@
+<div class="container">
+	<form rel="form-signup" class="form-signin form-col" action="user/ajax_signupUser" method="post">
+		<fieldset>
+		  <div class="form-group center">
+		    快速注册这故事账号，分享你的故事
+		  </div>
+		  <div class="form-group {/if !empty($error)/}has-error{//if/}">
+		    <i class="icon-inside icon-email"></i>
+		    <input type="text" class="form-control check-exist placeholder on" name="email" placeholder="邮箱" rel="input-email" id="inputEmail" value="">
+		  </div>
+		  <div class="form-group {/if !empty($error)/}has-error{//if/}">
+		    <i class="icon-inside icon-password"></i>
+		    <input type="password" class="form-control on placeholder" name="pwd" placeholder="密码" id="inputPassword">
+		  </div>
+		  <div class="form-group {/if !empty($error)/}has-error{//if/}">
+		    <i class="icon-inside icon-password"></i>
+		    <input type="password" class="form-control on placeholder" name="repwd" placeholder="确认密码" id="inputCheck">
+		  </div>
+		  <div class="action-group">
+		  	<span class="help-block {/if !empty($error)/}alert{//if/}">{/if !empty($error)/}{/$error/}{//if/}</span>
+		    <button type="submit" class="btn btn-primary btn-block" rel="signup">注册</button>
+		  </div>
+		</fieldset>
+    </form>
+</div>

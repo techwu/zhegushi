@@ -1,0 +1,4 @@
+[2013-10-09 19:02:08]	[select * from comment dtc left join user dtu on dtc.user_id = dtu.user_id  where dtc.story_id = :story_id and dtc.status =:status order by id asc]	[{"story_id":"1636528"}]
+[2013-10-09 19:02:11]	[select * from comment dtc left join user dtu on dtc.user_id = dtu.user_id  where dtc.story_id = :story_id and dtc.status =:status order by id asc]	[{"story_id":"1636527"}]
+[2013-10-09 19:02:12]	[select * from comment dtc left join user dtu on dtc.user_id = dtu.user_id  where dtc.story_id = :story_id and dtc.status =:status order by id asc]	[{"story_id":"1636527"}]
+[2013-10-09 19:02:12]	[select * from comment dtc left join user dtu on dtc.user_id = dtu.user_id  where dtc.story_id = :story_id and dtc.status =:status order by id asc]	[{"story_id":"1636527"}]
